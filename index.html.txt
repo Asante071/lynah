@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love, Lynah | You've Got This!</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tone.js for gentle romantic chimes on interaction -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        blush: {
+                            50: '#FFF8F9',
+                            100: '#FDEEF1',
+                            200: '#FADCE3',
+                            300: '#F5BCCB',
+                            400: '#ED8EA7',
+                            500: '#E15E82',
+                        },
+                        burgundy: {
+                            700: '#7D1935',
+                            800: '#631128',
+                            900: '#4A0B1D',
+                        },
+                        warmgold: {
+                            300: '#F3D899',
+                            400: '#E5BE6B',
+                            500: '#D4A346',
+                            600: '#B58328',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-blush-50 text-stone-800 font-sans antialiased selection:bg-blush-200 selection:text-burgundy-900 overflow-x-hidden relative">
+
+    <!-- Floating Particles Container (Hearts & Sparkles) -->
+    <div id="floating-container" class="fixed inset-0 pointer-events-none z-50 overflow-hidden"></div>
+
+    <!-- Subtle Top Ambient Glow -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[120vw] h-[50vh] bg-gradient-to-b from-blush-200/50 via-warmgold-300/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 backdrop-blur-md bg-blush-50/80 border-b border-blush-200/60 px-4 py-3 transition-all">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="#top" class="font-serif italic text-xl sm:text-2xl font-semibold text-burgundy-800 flex items-center gap-2">
+                <span class="text-warmgold-500">✦</span> For Lynah
+            </a>
+            <div class="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-burgundy-800/80">
+                <a href="#letter" class="hover:text-burgundy-800 transition-colors py-1">My Letter</a>
+                <a href="#memories" class="hover:text-burgundy-800 transition-colors py-1">Our Gallery</a>
+                <a href="#boost" class="bg-burgundy-800 text-white px-3.5 py-1.5 rounded-full shadow-sm hover:bg-burgundy-700 transition-all active:scale-95 flex items-center gap-1.5">
+                    <i class="fa-solid fa-heart text-blush-300 text-xs"></i> Hugs
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="top" class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+        <!-- 2-Year Milestone Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-warmgold-400/50 shadow-sm mb-6">
+            <span class="w-2 h-2 rounded-full bg-warmgold-500 animate-ping"></span>
+            <span class="text-xs sm:text-sm font-semibold tracking-wide uppercase text-burgundy-800">
+                2 Years Together &bull; 730+ Days of Loving You
+            </span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-burgundy-900 leading-tight mb-6">
+            Keep Going, My Love.<br>
+            <span class="italic font-normal text-burgundy-700">Your Diploma Awaits!</span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-base sm:text-lg text-stone-600 leading-relaxed mb-10">
+            I know how late you’ve been staying up and how hard you’re pushing through every single assignment right now. I made this little corner of the internet just to remind you how proud I am of you—and to tell you to <strong class="text-burgundy-800 font-semibold">never, ever give up</strong>.
+        </p>
+
+        <!-- Primary Interactive CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button onclick="triggerLoveBurst('hug')" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-burgundy-800 to-burgundy-700 text-white font-medium shadow-lg shadow-burgundy-800/20 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all flex items-center justify-center gap-3 text-base cursor-pointer">
+                <i class="fa-solid fa-heart-pulse text-blush-300 text-lg"></i>
+                <span>Send Me a Virtual Hug</span>
+            </button>
+            <a href="#letter" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-burgundy-800 border border-blush-300 font-medium shadow-sm hover:bg-blush-100/70 transition-all flex items-center justify-center gap-2 text-base">
+                <span>Read Your Note</span>
+                <i class="fa-solid fa-arrow-down text-xs text-warmgold-600"></i>
+            </a>
+        </div>
+
+        <!-- Featured Hero Photo Showcase -->
+        <div class="mt-14 sm:mt-16 relative max-w-3xl mx-auto">
+            <div class="absolute -inset-2 bg-gradient-to-tr from-warmgold-400/40 via-blush-300/40 to-burgundy-700/20 rounded-3xl blur-lg"></div>
+            <div class="relative bg-white p-3 sm:p-4 rounded-3xl shadow-xl border border-blush-200/80">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <div class="overflow-hidden rounded-2xl aspect-[4/5] bg-blush-100 relative group">
+                        <img src="image_a84fbd.jpg" alt="Us together" onerror="this.src='https://placehold.co/600x750/FDEEF1/631128?text=2+Years+Together'" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-3 left-3 right-3 bg-burgundy-900/75 backdrop-blur-sm text-white text-xs px-3 py-2 rounded-xl">
+                            Two years by your side, my favorite place to be ❤️
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl aspect-[4/5] bg-blush-100 relative group">
+                        <img src="image_52d578.jpg" alt="Lynah with flowers" onerror="this.src='https://placehold.co/600x750/FDEEF1/631128?text=My+Queen+Lynah'" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-3 left-3 right-3 bg-burgundy-900/75 backdrop-blur-sm text-white text-xs px-3 py-2 rounded-xl">
+                            Flowers for the hardest-working woman I know 🌸
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2-Year Milestone Highlight Cards -->
+    <section class="py-12 px-4 sm:px-6 max-w-5xl mx-auto">
+        <div class="bg-white/90 backdrop-blur-sm border border-warmgold-400/40 rounded-3xl p-6 sm:p-10 shadow-lg shadow-blush-200/40">
+            <div class="text-center mb-8">
+                <span class="text-warmgold-600 font-semibold text-xs uppercase tracking-widest">Our Journey So Far</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-burgundy-900 mt-1">2 Years of Us, Endless Future Ahead</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
+                <div class="p-6 rounded-2xl bg-blush-50 border border-blush-200/70">
+                    <div class="w-12 h-12 rounded-full bg-burgundy-800 text-warmgold-300 flex items-center justify-center mx-auto mb-3 text-xl shadow-sm">
+                        <i class="fa-solid fa-calendar-heart"></i>
+                    </div>
+                    <div class="font-serif text-3xl font-bold text-burgundy-900">2 Years</div>
+                    <p class="text-sm text-stone-600 mt-1">Of laughter, late-night talks, and growing stronger together.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-blush-50 border border-blush-200/70">
+                    <div class="w-12 h-12 rounded-full bg-warmgold-500 text-white flex items-center justify-center mx-auto mb-3 text-xl shadow-sm">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="font-serif text-3xl font-bold text-burgundy-900">100%</div>
+                    <p class="text-sm text-stone-600 mt-1">Belief in you finishing this diploma with flying colors.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-blush-50 border border-blush-200/70">
+                    <div class="w-12 h-12 rounded-full bg-burgundy-800 text-blush-200 flex items-center justify-center mx-auto mb-3 text-xl shadow-sm">
+                        <i class="fa-solid fa-infinity"></i>
+                    </div>
+                    <div class="font-serif text-3xl font-bold text-burgundy-900">Always</div>
+                    <p class="text-sm text-stone-600 mt-1">Your biggest cheerleader, your safe space, and your partner.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heartfelt Letter Section -->
+    <section id="letter" class="py-14 sm:py-20 px-4 sm:px-6 max-w-3xl mx-auto">
+        <div class="relative bg-white rounded-3xl p-7 sm:p-12 shadow-xl border border-blush-200">
+            <!-- Decorative Corner Accents -->
+            <div class="absolute top-5 right-6 text-warmgold-400 text-2xl opacity-70">❝</div>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-full bg-blush-100 border border-blush-300 flex items-center justify-center text-burgundy-800">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-burgundy-900">A Letter For You, Lynah</h2>
+                    <p class="text-xs text-stone-500">Read this whenever an assignment feels overwhelming</p>
+                </div>
+            </div>
+
+            <div class="space-y-5 text-stone-700 text-base sm:text-lg leading-relaxed font-normal">
+                <p class="font-serif italic text-xl text-burgundy-800">My dearest Lynah,</p>
+                
+                <p>
+                    Over these past two years together, I’ve watched you handle life with so much grace, beauty, and determination. Right now, I see how hard you are working on your diploma assignments, and I just want you to pause for a brief second and take a deep breath.
+                </p>
+
+                <p>
+                    I know the deadlines can feel heavy, the pages can feel endless, and sometimes you might feel exhausted. Whenever doubt creeps in, remember who you are: you are brilliant, resilient, and capable of achieving every single dream you set your mind to. <span class="bg-blush-100 text-burgundy-900 font-medium px-1.5 py-0.5 rounded">Please never give up—you are closer to the finish line than you think.</span>
+                </p>
+
+                <p>
+                    Take it one paragraph, one task, and one day at a time. Don’t forget to drink water, rest your eyes when you need to, and know that whether you’re dressed up glowing or chilling on the couch in your bonnet with your phone, I admire you endlessly.
+                </p>
+
+                <p>
+                    I cannot wait for the day we celebrate your graduation together. Until then, lean on me whenever you need strength. Wishing you all the very best with every assignment ahead!
+                </p>
+
+                <div class="pt-4 border-t border-blush-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <p class="text-sm text-stone-500">Forever proud of you,</p>
+                        <p class="font-serif italic text-2xl font-semibold text-burgundy-800 mt-0.5">Your Man & Biggest Fan ❤️</p>
+                    </div>
+                    <button onclick="triggerLoveBurst('kiss')" class="self-start sm:self-auto px-5 py-2.5 rounded-full bg-blush-100 hover:bg-blush-200 text-burgundy-800 text-sm font-semibold transition-all active:scale-95 flex items-center gap-2 cursor-pointer">
+                        <span>Tap for a Kiss</span> <span>😘</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Motivation Boost Box -->
+    <section id="boost" class="py-10 px-4 sm:px-6 max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-burgundy-900 via-burgundy-800 to-burgundy-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden text-center">
+            <!-- Subtle Gold Glow -->
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-warmgold-400/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blush-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <span class="inline-block px-3.5 py-1 rounded-full bg-white/10 text-warmgold-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/15">
+                Study Break Pick-Me-Up
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">Need a Motivation Boost?</h2>
+            <p class="text-blush-200 text-sm sm:text-base max-w-xl mx-auto mb-8">
+                Tap the button below anytime you're stuck on an assignment and need a reminder of how amazing you are.
+            </p>
+
+            <!-- Dynamic Encouragement Display Box -->
+            <div id="motivation-box" class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto mb-8 min-h-[120px] flex flex-col items-center justify-center transition-all duration-300">
+                <p id="motivation-text" class="font-serif italic text-xl sm:text-2xl text-white leading-relaxed">
+                    "Future Diploma Holder loading... Keep pushing, baby, you're doing amazing!"
+                </p>
+                <span id="motivation-tag" class="text-xs text-warmgold-300 mt-3 uppercase tracking-widest font-medium">
+                    ✦ Reminder #1 of Unlimited
+                </span>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <button onclick="nextMotivation()" class="px-7 py-3.5 rounded-full bg-warmgold-400 hover:bg-warmgold-300 text-burgundy-900 font-bold shadow-lg transition-all active:scale-95 flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Give Me a Boost!</span>
+                </button>
+                <button onclick="triggerLoveBurst('love')" class="px-7 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/25 font-medium transition-all active:scale-95 flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-heart text-blush-300"></i>
+                    <span>Send Love Shower (<span id="love-counter">0</span>)</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Photo Gallery (All 10 Pictures) -->
+    <section id="memories" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-warmgold-600 font-semibold text-xs uppercase tracking-widest">Our Complete Gallery</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900 mt-2 mb-3">Every Side of You I Adore</h2>
+            <p class="text-stone-600 text-sm sm:text-base">
+                From glamorous date nights and car rides to cozy study-break evenings—tap any photo to view it up close with a little note.
+            </p>
+        </div>
+
+        <!-- Responsive Masonry-Style Photo Grid -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            <!-- Cards injected cleanly by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-blush-200 bg-white/70 py-10 px-4 text-center">
+        <div class="max-w-xl mx-auto">
+            <p class="font-serif italic text-2xl text-burgundy-800 mb-2">You've got this, Lynah. Never give up! 🎓✨</p>
+            <p class="text-xs sm:text-sm text-stone-500">Made with all my love to celebrate 2 years together &amp; cheer you on through your diploma.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox-modal" onclick="closeLightbox(event)" class="fixed inset-0 z-50 bg-burgundy-900/90 backdrop-blur-md hidden items-center justify-center p-4 transition-opacity">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-blush-200 relative animate-[fadeIn_0.25s_ease-out]" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" aria-label="Close photo" class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-burgundy-900/70 text-white hover:bg-burgundy-800 flex items-center justify-center transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="bg-stone-900 max-h-[65vh] flex items-center justify-center overflow-hidden">
+                <img id="lightbox-img" src="" alt="Memory" class="w-full h-full max-h-[65vh] object-contain">
+            </div>
+            <div class="p-6 text-center bg-white">
+                <span id="lightbox-tag" class="text-xs font-semibold uppercase tracking-wider text-warmgold-600"></span>
+                <p id="lightbox-caption" class="font-serif text-lg sm:text-xl text-burgundy-900 mt-1"></p>
+                <div class="mt-4 flex items-center justify-center gap-3">
+                    <button onclick="navigateLightbox(-1)" class="px-4 py-2 rounded-full bg-blush-100 hover:bg-blush-200 text-burgundy-800 text-sm font-medium transition-colors cursor-pointer">
+                        <i class="fa-solid fa-chevron-left mr-1"></i> Prev
+                    </button>
+                    <button onclick="triggerLoveBurst('heart')" class="px-4 py-2 rounded-full bg-burgundy-800 text-white text-sm font-medium hover:bg-burgundy-700 transition-colors cursor-pointer">
+                        <i class="fa-solid fa-heart text-blush-300 mr-1"></i> Love This
+                    </button>
+                    <button onclick="navigateLightbox(1)" class="px-4 py-2 rounded-full bg-blush-100 hover:bg-blush-200 text-burgundy-800 text-sm font-medium transition-colors cursor-pointer">
+                        Next <i class="fa-solid fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Banner (Non-blocking feedback) -->
+    <div id="toast-banner" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-burgundy-900 text-white px-5 py-3 rounded-full shadow-xl border border-warmgold-400/40 text-sm font-medium flex items-center gap-2.5 opacity-0 pointer-events-none transition-all duration-300 translate-y-4">
+        <span id="toast-emoji">💖</span>
+        <span id="toast-message">Sending you a giant hug!</span>
+    </div>
+
+    <script>
+        // Curated gallery items using all 10 uploaded photos of Lynah & the couple
+        const photos = [
+            {
+                src: 'image_6ee9a3.jpg',
+                tag: 'Unstoppable Energy',
+                caption: 'Looking like an absolute boss by your car! That same confidence is going to crush every single assignment.'
+            },
+            {
+                src: 'image_5581a3.jpg',
+                tag: 'Carside Glow',
+                caption: 'Always looking radiant and beautiful. Keep that head held high!'
+            },
+            {
+                src: 'image_a26f8a.jpg',
+                tag: 'Date Night Elegance',
+                caption: '2 years of dressing up, stepping out, and admiring how stunning you are.'
+            },
+            {
+                src: 'image_091cc1.jpg',
+                tag: 'Better Together',
+                caption: 'Always standing right beside you, through busy study weeks and big milestones.'
+            },
+            {
+                src: 'image_9a373e.jpg',
+                tag: 'Cozy Queen',
+                caption: 'Even when you’re relaxing on the couch in your bonnet, you’re the cutest person in the world.'
+            },
+            {
+                src: 'image_52d578.jpg',
+                tag: 'Deserving of Every Flower',
+                caption: 'A bouquet for my hardworking queen—keep blooming through this semester!'
+            },
+            {
+                src: 'image_0428b4.jpg',
+                tag: 'That Sweet Smile',
+                caption: 'Your peaceful smile makes every hard day worth it. Keep shining, Lynah!'
+            },
+            {
+                src: 'image_e17728.jpg',
+                tag: 'Pure Grace',
+                caption: 'Focused, determined, and effortlessly gorgeous. Your diploma is already yours!'
+            },
+            {
+                src: 'image_4cf623.jpg',
+                tag: '2 Years Strong',
+                caption: '730+ days of having each other’s backs. I’m always in your corner.'
+            },
+            {
+                src: 'image_a84fbd.jpg',
+                tag: 'My Safe Place',
+                caption: 'No matter how busy college gets, my favorite place will always be right next to you.'
+            }
+        ];
+
+        // Encouraging quotes specifically tailored for Lynah's diploma journey
+        const motivations = [
+            "Future Diploma Holder loading... Keep pushing, baby, you're doing amazing!",
+            "Every late night and every typed word is bringing you closer to graduation day.",
+            "You didn't come this far just to come this far—you've got the brains and heart to finish strong!",
+            "Take a deep breath, sip some water, and remember: I am SO proud of you, Lynah.",
+            "2 years of watching you shine has taught me there's nothing you can't conquer.",
+            "Hard work looks good on you! One assignment at a time, my love. Never give up!",
+            "When you graduate, we're celebrating ten times harder! Keep going, superstar 🎓❤️"
+        ];
+
+        let currentMotivationIdx = 0;
+        let currentLightboxIdx = 0;
+        let loveCount = 0;
+
+        // Render Gallery Cards
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = photos.map((photo, index) => `
+                <div onclick="openLightbox(${index})" class="group bg-white rounded-3xl p-3 shadow-md hover:shadow-xl border border-blush-200/80 transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-blush-100">
+                        <img 
+                            src="${photo.src}" 
+                            alt="${photo.tag}" 
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x750/FDEEF1/631128?text=Lynah+%E2%9D%A4%EF%B8%8F'"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-burgundy-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white text-xs font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-expand"></i> Tap to view memory
+                            </span>
+                        </div>
+                    </div>
+                    <div class="pt-3.5 pb-1.5 px-2 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-warmgold-600">${photo.tag}</span>
+                            <p class="text-sm text-stone-700 mt-1 leading-snug">${photo.caption}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Play soft romantic chime using Tone.js
+        function playGentleChime() {
+            try {
+                if (typeof Tone !== 'undefined') {
+                    if (Tone.context.state !== 'running') {
+                        Tone.start();
+                    }
+                    const synth = new Tone.PolySynth(Tone.Synth, {
+                        oscillator: { type: "sine" },
+                        envelope: { attack: 0.05, decay: 0.3, sustain: 0.1, release: 1.2 }
+                    }).toDestination();
+                    synth.volume.value = -14;
+                    const chords = [
+                        ["C5", "E5", "G5"],
+                        ["D5", "F#5", "A5"],
+                        ["E5", "G#5", "B5"]
+                    ];
+                    const pick = chords[Math.floor(Math.random() * chords.length)];
+                    synth.triggerAttackRelease(pick, "8n");
+                }
+            } catch (e) {
+                // Fail silently if audio isn't supported
+            }
+        }
+
+        // Show subtle non-blocking toast notification
+        let toastTimeout;
+        function showToast(emoji, message) {
+            const banner = document.getElementById('toast-banner');
+            document.getElementById('toast-emoji').textContent = emoji;
+            document.getElementById('toast-message').textContent = message;
+
+            banner.classList.remove('opacity-0', 'translate-y-4');
+            banner.classList.add('opacity-100', 'translate-y-0');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                banner.classList.add('opacity-0', 'translate-y-4');
+                banner.classList.remove('opacity-100', 'translate-y-0');
+            }, 3000);
+        }
+
+        // Floating Hearts & Confetti Animation
+        function triggerLoveBurst(type = 'love') {
+            playGentleChime();
+            loveCount++;
+            const counterEl = document.getElementById('love-counter');
+            if (counterEl) counterEl.textContent = loveCount;
+
+            const container = document.getElementById('floating-container');
+            const emojis = type === 'hug' 
+                ? ['🤗', '❤️', '💖', '✨', '🌹'] 
+                : type === 'kiss' 
+                ? ['😘', '💋', '💕', '🌹', '✨']
+                : ['❤️', '💖', '🎓', '✨', '🌸', '💛'];
+
+            if (type === 'hug') {
+                showToast('🤗', 'Wrapping you in the biggest, warmest 2-year hug!');
+            } else if (type === 'kiss') {
+                showToast('😘', 'Sending forehead kisses & good luck energy!');
+            } else {
+                showToast('💖', 'Showering you with love & motivation!');
+            }
+
+            // Spawn 24 floating particles
+            for (let i = 0; i < 24; i++) {
+                const particle = document.createElement('div');
+                const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+                particle.textContent = emoji;
+                particle.style.position = 'fixed';
+                particle.style.left = `${Math.random() * 94 + 3}vw`;
+                particle.style.bottom = '-40px';
+                particle.style.fontSize = `${Math.random() * 18 + 18}px`;
+                particle.style.zIndex = '60';
+                particle.style.pointerEvents = 'none';
+                particle.style.transition = `transform ${Math.random() * 2 + 2.2}s cubic-bezier(0.22, 1, 0.36, 1), opacity 2.5s ease-out`;
+                
+                container.appendChild(particle);
+
+                // Trigger upward float on next frame
+                requestAnimationFrame(() => {
+                    const driftX = (Math.random() - 0.5) * 140;
+                    const liftY = -(window.innerHeight * (0.65 + Math.random() * 0.45));
+                    const rotate = (Math.random() - 0.5) * 60;
+                    particle.style.transform = `translate(${driftX}px, ${liftY}px) rotate(${rotate}deg)`;
+                    particle.style.opacity = '0';
+                });
+
+                setTimeout(() => {
+                    particle.remove();
+                }, 4300);
+            }
+        }
+
+        // Cycle Motivation Quotes
+        function nextMotivation() {
+            playGentleChime();
+            currentMotivationIdx = (currentMotivationIdx + 1) % motivations.length;
+            const box = document.getElementById('motivation-box');
+            const textEl = document.getElementById('motivation-text');
+            const tagEl = document.getElementById('motivation-tag');
+
+            box.style.opacity = '0.4';
+            box.style.transform = 'scale(0.98)';
+
+            setTimeout(() => {
+                textEl.textContent = `"${motivations[currentMotivationIdx]}"`;
+                tagEl.textContent = `✦ Reminder #${currentMotivationIdx + 1} of ${motivations.length}`;
+                box.style.opacity = '1';
+                box.style.transform = 'scale(1)';
+            }, 180);
+
+            // Spawn a few celebratory sparkles
+            const container = document.getElementById('floating-container');
+            ['✨', '🎓', '💖'].forEach((emoji, idx) => {
+                const el = document.createElement('div');
+                el.textContent = emoji;
+                el.style.position = 'fixed';
+                el.style.left = `${40 + idx * 10}vw`;
+                el.style.top = '55vh';
+                el.style.fontSize = '24px';
+                el.style.transition = 'all 1.6s ease-out';
+                container.appendChild(el);
+                requestAnimationFrame(() => {
+                    el.style.transform = `translate(${(idx - 1) * 50}px, -180px)`;
+                    el.style.opacity = '0';
+                });
+                setTimeout(() => el.remove(), 1700);
+            });
+        }
+
+        // Lightbox Controls
+        function openLightbox(index) {
+            currentLightboxIdx = index;
+            updateLightboxContent();
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event && event.target !== document.getElementById('lightbox-modal')) return;
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(step) {
+            currentLightboxIdx = (currentLightboxIdx + step + photos.length) % photos.length;
+            updateLightboxContent();
+        }
+
+        function updateLightboxContent() {
+            const photo = photos[currentLightboxIdx];
+            const img = document.getElementById('lightbox-img');
+            img.src = photo.src;
+            img.onerror = function() {
+                this.src = 'https://placehold.co/600x750/FDEEF1/631128?text=Lynah+%E2%9D%A4%EF%B8%8F';
+            };
+            document.getElementById('lightbox-tag').textContent = photo.tag;
+            document.getElementById('lightbox-caption').textContent = photo.caption;
+        }
+
+        // Keyboard navigation for Lightbox
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('lightbox-modal');
+            if (modal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        });
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+        });
+    </script>
+</body>
+</html>
